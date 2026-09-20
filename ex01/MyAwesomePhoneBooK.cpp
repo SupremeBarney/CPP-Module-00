@@ -23,7 +23,7 @@ void	prompt(PhoneBook phonebook)
 			phonebook.add_contact(new_contact);
 		}
 		else if (option.compare("SEARCH") == 0)
-			
+			phonebook.search_contact();
 	} while (option.compare("EXIT") != 0);
 	
 }
