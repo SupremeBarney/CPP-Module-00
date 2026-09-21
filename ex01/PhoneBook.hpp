@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <sstream>
+#include <cctype>
 
 class PhoneBook
 {
@@ -20,6 +21,7 @@ public:
 	void	search_contact(void);
 	void	print_contacts(void);
 	void	prompt_contact(void);
+	void	display_info(int index);
 };
 
 #endif

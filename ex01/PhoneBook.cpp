@@ -89,25 +89,46 @@ void	PhoneBook::print_contacts(void)
 		std::cout << separator << std::endl;
 }
 
+void	PhoneBook::display_info(int index)
+{
+	std::cout << "First Name : " << _contacts[index].getfirst_name() << std::endl;
+	std::cout << "Last Name : " << _contacts[index].getlast_name() << std::endl;
+	std::cout << "Nickname : " << _contacts[index].getnickname() << std::endl;
+	std::cout << "Phone Number : " << _contacts[index].getphone_number() << std::endl;
+	std::cout << "Darkest Secret : " << _contacts[index].getdarkest_secret() << std::endl;
+}
+
 void	PhoneBook::prompt_contact(void)
 {
 	std::string	index;
 	int			i_index;
 
+	if (!_nbContact)
+		return ;
 	std::cout << "Choose a contact to display : ";
 	std::getline(std::cin, index);
+	for (size_t i = 0; i < index.length(); i++)
+	{
+		if (!isdigit(index[i]))
+		{
+			std::cout << "Invalid index" << std::endl;
+			return ;
+		}
+	}
 	std::istringstream iss(index);
 	iss >> i_index;
-	while (i_index <)
+	if (i_index < 0 || i_index >= _nbContact)
 	{
-		/* code */
+		std::cout << "Invalid index" << std::endl;
+		return ;
 	}
-	
+	display_info(i_index);
 }
 
 void	PhoneBook::search_contact(void)
 {
 	print_header();
 	print_contacts();
+	prompt_contact();
 }
 
