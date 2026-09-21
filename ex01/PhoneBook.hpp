@@ -10,7 +10,7 @@
 class PhoneBook
 {
 private:
-	Contact _contacts[9];
+	Contact _contacts[8];
 	int     _nbContact;
 
 public:
