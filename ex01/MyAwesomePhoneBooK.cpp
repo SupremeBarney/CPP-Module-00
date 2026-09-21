@@ -31,8 +31,8 @@ void	prompt(PhoneBook phonebook)
 int	main(void)
 {
 	PhoneBook	phonebook;
-	Contact		contact;
 
 	prompt(phonebook);
+	return (0);
 }
 
